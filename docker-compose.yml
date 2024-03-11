@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+    node:
+        image: node:20-alpine
+        volumes:
+            - .:/home/node
+        command: sh /home/node/generate-font.sh
