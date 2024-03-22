@@ -1,7 +1,9 @@
 version: "3.9"
 services:
-    node:
-        image: node:20-alpine
+    bun:
+        image: oven/bun
         volumes:
-            - .:/home/node
-        command: sh /home/node/generate-font.sh
+            - .:/home/bun/app
+        network_mode: host
+        working_dir: /home/bun/app
+        command: bun run webfont
